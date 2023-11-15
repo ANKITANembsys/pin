@@ -11,23 +11,19 @@ import pandas as pd
 app = Flask(__name__)
 
 # Sample DataFrame (replace this with your own data)
-data = {
-    'Name': ['John', 'Alice', 'Bob', 'Charlie'],
-    'Age': [25, 30, 22, 35],
-    'City': ['New York', 'San Francisco', 'Seattle', 'Chicago']
-}
+df = pd.read_csv('Pincode.csv')
 
-df = pd.DataFrame(data)
+#df = pd.DataFrame(data)
 
 @app.route('/filter', methods=['POST'])
 def filter_dataframe():
     try:
         # Get inputs from the request JSON
-        name_filter = request.json.get('name', None)
-        age_filter = request.json.get('age', None)
+        name_filter = request.json.get('Pincode', None)
+        #age_filter = request.json.get('age', None)
 
         # Apply filters to the DataFrame
-        filtered_df = df[(df['Name'] == name_filter) & (df['Age'] == age_filter)]
+        filtered_df = df[(df['Pincode'] == name_filter) ]
 
         # Convert filtered DataFrame to JSON
         result = filtered_df.to_json(orient='records')
