@@ -11,7 +11,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Sample DataFrame (replace this with your own data)
-df = pd.read_csv('Pincode.csv')
+df = pd.read_csv('Pincode.csv', encoding='ISO-8859-1')
 
 #df = pd.DataFrame(data)
 
