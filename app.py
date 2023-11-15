@@ -23,7 +23,7 @@ def filter_dataframe():
         #age_filter = request.json.get('age', None)
 
         # Apply filters to the DataFrame
-        filtered_df = df[(df['Pincode'] == name_filter) ]
+        filtered_df = df[df['Pincode'] == name_filter]
 
         # Convert filtered DataFrame to JSON
         result = filtered_df.to_json(orient='records')
