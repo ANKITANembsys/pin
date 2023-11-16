@@ -7,9 +7,11 @@ Created on Wed Nov 15 18:25:16 2023
 
 from flask import Flask, request, jsonify
 import pandas as pd
+from flask_cors import CORS  # Import the CORS extension
+
 
 app = Flask(__name__)
-
+CORS(app)  # Enable CORS for all routes
 # Sample DataFrame (replace this with your own data)
 df = pd.read_csv('Pincode.csv', encoding='ISO-8859-1')
 
