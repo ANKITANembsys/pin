@@ -37,7 +37,7 @@ def filter_dataframe():
 
 
 @app.route('/filter_city', methods=['POST'])
-def filter_dataframe():
+def filter_city():
     try:
         # Get inputs from the request JSON
         name_filter = request.json.get('city', None)
